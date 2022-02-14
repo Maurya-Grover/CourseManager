@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Button from "../../UI/Button/Button";
-import "./CourseInput.css";
+import styles from "./CourseInput.module.css";
 
 const CourseInput = (props) => {
 	const [enteredValue, setEnteredValue] = useState("");
@@ -21,7 +21,12 @@ const CourseInput = (props) => {
 
 	return (
 		<form onSubmit={formSubmitHandler}>
-			<div className={`form-control ${isValid ? "" : "invalid"}`}>
+			{/* styles["form-control"] this syntax used because form-control 
+			classname has a special character '-' or else styles.className
+			syntax will work like used in styles.invalid*/}
+			<div
+				className={`${styles["form-control"]} ${isValid ? "" : styles.invalid}`}
+			>
 				<label>Course Goal</label>
 				<input
 					value={enteredValue}
