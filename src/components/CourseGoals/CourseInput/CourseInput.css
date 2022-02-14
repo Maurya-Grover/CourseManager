@@ -1,3 +1,11 @@
+/*
+these css files and classes are not scoped to the component they're imported in
+any file can simply invoke and use these classes. Every element on the entire page with form-control
+class for eg will be affected because by default theses styles are not scoped
+
+1 way to solve this problem is to use a package called 'styled components'
+look at Button.js in UI to see use case
+*/
 .form-control {
 	margin: 0.5rem 0;
 }
